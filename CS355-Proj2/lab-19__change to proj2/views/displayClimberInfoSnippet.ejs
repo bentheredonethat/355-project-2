@@ -1,0 +1,21 @@
+
+<table >
+ <tr>
+  <td bgcolor="#7fffd4">
+   <font color="black>">
+ <% if(rs.length > 0) { %>
+
+ <h2>climber Inserted</h2>
+ Name: <%= rs[0].climberName %>  <br />
+US: <%= rs[0].hardestGradeUS %>  <br />
+Euro: <%= rs[0].hardestGradeEuro %> <br />
+Country: <%= rs[0].country %><br />
+YoB: <%= rs[0].birthYear %> <br />
+Average Rating of Routes sent (US system): <%=  rs[0].AvgRating ? rs[0].AvgRating : "no record of routes sent" %><br />
+</font></td></tr>
+<% } else { %>
+ <font color="black">No climber matched this movie id <%= climberID %>. </font>
+<% } %>
+
+
+</table>

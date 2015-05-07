@@ -1,0 +1,55 @@
+<% include header %>
+<div align="center">
+    <table>
+
+<% if(rs.length > 0) { %>
+        <tr>
+            <td bgcolor="#7fffd4">
+<font color="black"> Name: <%= rs[0].routeName %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+    <font color="black"> Location: <%= rs[0].locationOfRoute %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+        <font color="black"> US: <%= rs[0].difficultyUS %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+        <font color="black"> Euro: <%= rs[0].difficultyEuro %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+        <font color="black"> FA: <%= rs[0].firstAscent %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+        <font color="black"> Type: <%= rs[0].typeOfClimb %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+        <font color="black"> Pitches: <%= rs[0].numberPitches %> </font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#7fffd4">
+        <font color="black"> Setter: <%= rs[0].routeSetter %> </font>
+            </td>
+        </tr>
+<% } else { %>
+No routes matched this route id <%= routeID %>.
+<% } %>
+</table>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    <br/><br/>
+    </div>
+<% include footer %>

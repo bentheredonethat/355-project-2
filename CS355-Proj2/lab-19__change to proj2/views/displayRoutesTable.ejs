@@ -1,0 +1,24 @@
+<% include header %>
+
+<div align="center">
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th bgcolor="#7fffd4">Name</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td bgcolor="black"><a href="/route/?routeID=<%= rs[i].routeID %>"> <font color="white"> <%= rs[i].routeName %> </font></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No routes are entered into the routes database table.
+    <% } %>
+</div>
+
+
+<div style="margin-top:10px" align="center">
+
+    <table><th bgcolor="#7fffd4">  <a href="/route/create/">We can always use a new project!</a></th></table>
+</div>
+
+<% include footer %>

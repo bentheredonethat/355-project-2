@@ -1,0 +1,66 @@
+<% include header %>
+
+<div align="center" style="#7fffd4">
+
+
+<% if(rs.length > 0) { %>
+ <table>
+  <tr>
+   <td bgcolor="#7fffd4">
+    <font color="black"> Name: <%= rs[0].climberName %> </font>
+   </td>
+  </tr>
+  <tr>
+   <td bgcolor="#7fffd4">
+ <font color="black"> US: <%= rs[0].hardestGradeUS %> </font>
+   </td>
+  </tr>
+  <tr>
+   <td bgcolor="#7fffd4">
+  <font color="black">Euro: <%= rs[0].hardestGradeEuro %> </font><br />
+  </td>
+  </tr>
+  <tr>
+   <td bgcolor="#7fffd4">
+   <font color="black">Country: <%= rs[0].country %> </font><br />
+  </td>
+  </tr>
+  <tr>
+   <td bgcolor="#7fffd4">
+    <font color="black">YoB: <%= rs[0].birthYear %> </font><br />
+  </td>
+  </tr>
+
+<!-- >
+ display all sponsors
+ </!-->
+  <tr>
+   <td bgcolor="#7fffd4">
+<div>
+<% if (sponsorRS && sponsorRS.length > 0) { %>
+<table border="1">
+ <tr><th>Sponsor(s)</th></tr>
+ <% for (var i=0; sponsorRS.length > i; i++) { %>
+    <tr>
+     <td> <%= sponsorRS[i].sponsorName %></td>
+    </tr>
+ <% } %>
+</table>
+ <% } else { %>
+ <font color="black" No sponsors yet...
+ <% } %>
+</div>
+
+<% } else { %>
+<br />
+No climber with climber ID <%= climberID %>.
+<% } %>
+   </td>
+  </tr>
+</table>
+ <br/><br/>
+ <br/><br/>
+ <br/><br/>
+ <br/><br/>
+</div>
+<% include footer %>

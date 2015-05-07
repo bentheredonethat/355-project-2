@@ -1,0 +1,55 @@
+
+<% include header %>
+
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_route.js']; %>
+
+<script type="text/javascript" src="/create_route.js"></script>
+
+
+<!-- Note that this is a post -->
+<form id="create_user_form" action="<%= action %>">
+    <table id="login" align="center">
+        <tr bgcolor="#7fffd4"><td>route name:</td>
+            <td><input type="text" id="routeName" name="routeName" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>location:</td>
+            <td>
+                <select  name="locationID" id="locationID">
+                    <% if (locationsRS.length > 0){
+                    for(var i = 0; i < locationsRS.length; i++){ %>
+                    <option value= <%= locationsRS[i].locationID %>    > <%= locationsRS[i].physicalLocation  %></option>;
+                    <%    }
+                    } %>
+                </select>
+            </td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>difficultyUS:</td>
+            <td><input type="text" id="difficultyUS" name="difficultyUS" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>difficulty Euro:</td>
+            <td><input type="text" id="difficultyEuro" name="difficultyEuro" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>FA:</td>
+            <td><input type="text" id="firstAscent" name="firstAscent" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>Type:</td>
+            <td><input type="text" id="typeOfClimb" name="typeOfClimb" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>Pitches?</td>
+            <td><input type="text" id="numberPitches" name="numberPitches" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>Setter:</td>
+            <td><input type="text" id="routeSetter" name="routeSetter" /></td>
+        </tr>
+    </table>
+    <!-- not that we use a button here and not submit -->
+    <input type="button" id="createRouteBtn" value="Create" />
+</form>
+
+<div id="output" style="margin:10px;display:none"></div>
+<br/><br/>
+<br/><br/>
+<br/><br/><br/>
+
+<% include footer %>

@@ -1,0 +1,54 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_climber.js']; %>
+<% include header %>
+
+<div align="center">
+
+
+
+<!-- Note that this is a post -->
+<form id="create_user_form" action="<%= action %>">
+    <table id="login" bgcolor="#7fffd4" align="center">
+        <tr bgcolor="#7fffd4"><td >Name:</td>
+            <td><input type="text" id="climberName" name="climberName" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>hardest rating US:</td>
+            <td><input type="text" id="hardestGradeUS" name="hardestGradeUS" /></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>hardest rating Euro:</td>
+            <td><input id="hardestGradeEuro" name="hardestGradeEuro"/></td>
+        </tr>
+        <tr bgcolor="#7fffd4"><td>Country:</td>
+            <td><input id="country" name="country"/></td>
+        </tr>
+        <tr bgcolor="#7fffd4">
+            <td>Year of Birth:</td>
+            <td>
+                <input id="birthYear" name="birthYear"/>
+            </td>
+        </tr>
+        <tr >
+            <td bgcolor="#7fffd4">Any Routes they have done?</td>
+            <td>
+                <select  name="routeID" id="routeID">
+                    <% if (routeRS.length > 0){
+                    for(var i = 0; i < routeRS.length; i++){ %>
+                    <option value="<%= routeRS[i].routeID %>"> <%=routeRS[i].routeName  %></option>;
+                    <%    }
+                    } %>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <!-- not that we use a button here and not submit -->
+    <input type="button" id="createClimberBtn" value="Create" />
+</form>
+
+<div id="output" style="margin:10px;display:none"></div>
+
+</div>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<% include footer %>

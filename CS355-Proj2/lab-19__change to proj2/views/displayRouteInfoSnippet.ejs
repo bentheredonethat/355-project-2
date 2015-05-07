@@ -1,0 +1,24 @@
+<div align="center">
+<table>
+    <tr>
+        <td bgcolor="#7fffd4">
+            <font color="black>">
+<h2>Route Inserted</h2>
+<% if(rs.length > 0) { %>
+Name: <%= rs[0].routeName %> <br />
+Location: <%= rs[0].locationOfRoute %> <br />
+US: <%= rs[0].difficultyUS %> <br />
+Euro: <%= rs[0].difficultyEuro %> <br />
+FA: <%= rs[0].firstAscent %> <br />
+Type: <%= rs[0].typeOfClimb %> <br />
+Pitches: <%= rs[0].numberPitches %> <br />
+Setter: <%= rs[0].routeSetter %> <br />
+<% } else { %>
+No route matched this route id <%= routeID %>.
+<% } %>
+            </font>
+    </td>
+    </tr>
+    </table>
+
+</div>

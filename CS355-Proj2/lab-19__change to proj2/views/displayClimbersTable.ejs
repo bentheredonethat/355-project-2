@@ -1,0 +1,27 @@
+<% include header %>
+
+<div align="center">
+    <% if(rs.length > 0) { %>
+    <table border="1" >
+        <tr>
+            <th bgcolor="#7fffd4">Name</th>
+            <th bgcolor="#7fffd4">Max (US) Route Difficulty</th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td bgcolor="black"><a href="/climber/?climberID=<%= rs[i].climberID %>"> <font color="white">   <%= rs[i].climberName %>  </font></a></td>
+            <td bgcolor="black"> <font color="white">   <%= rs[i].hardestGradeUS %>  </font></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No climbers are in the database.
+    <% } %>
+</div>
+
+<div style="margin-top:10px" align="center">
+
+   <table><th bgcolor="#7fffd4"> <a href="/climber/create/"> Are we missing someone?</a></th></table>
+</div>
+
+<% include footer %>
